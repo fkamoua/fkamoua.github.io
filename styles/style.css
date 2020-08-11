@@ -1,28 +1,148 @@
 html {
-    font-size: 10px;
-    font-family: 'Recursive', sans-serif;
-    background-color: #F0F3F9;
+    box-sizing: border-box;
+    background: whitesmoke;
+    color: #333;
 }
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+/* | Layout ==================================================== 
+===============================================================*/
+
+/* fallback layout */
+main {
+    max-width: 500px;
+    padding: 0rem 1rem;
+    margin: 0 auto;
+}
+.content {
+    margin: 1rem 0;
+}
+
+
+/* CSS Grid */
+@supports (display: grid) {
+    main {
+        max-width: none;
+        margin: 0;
+    }
+
+
+    /* Nav-bar Layout */
+    .nav-bar {
+        display: flex;
+        flex-flow: column;
+    }
+
+    /* Article Layout */
+    .article-container {
+        display: grid;
+        grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    /* Card Layout */
+    .description-card-container {
+        display: grid;
+        grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    .content {
+        display: flex;
+        flex-flow: column;
+        margin: 0;
+        padding: 2rem;
+    }
+}
+
+/* | Typography ==================================================== 
+===============================================================*/
+main {
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    letter-spacing: -.00278rem;
+    font-size: 20px;
+}
+
+
+/* | General Styles ==================================================== 
+===============================================================*/
 
 body {
-    width: 600px;
-    margin: 0 auto;
-    background-color: #0E1524;
-    padding: 0 20px 20px 20px;
-    border: 5px solid black;
+    margin: 0;
 }
 
-h1 {
-    font-size: 30px;
-    text-align: center;
+div {
     margin: 0;
-    padding: 20px 0;
-    color: #F0F3F9;
+    padding: 0;
+    border: 0;
 }
 
 p {
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 2px;
-    color: #F0F3F9;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
+
+article {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+/* | Styles ==================================================== 
+===============================================================*/
+
+
+.nav-bar {
+    text-align: center;
+    background-color: #569458;
+}
+
+
+
+.content {
+    /* border: 1px solid black; */
+}
+
+.content > h2 {
+    margin: 1rem 0rem;
+}
+
+
+.card {
+    padding: 2rem 10rem;
+}
+
+
+.nav-footer {
+    padding: 100px 48px 0px 48px;
+}
+
+.nav-footer .content-container {
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.nav-footer .social {
+    display: flex;
+    align-items: center;
+}
+
+.nav-footer .social svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: sub;
+}
+
+
+
+
+
+
+
