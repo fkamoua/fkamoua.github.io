@@ -64,8 +64,33 @@ main {
     line-height: 1.6;
     font-family: Arial, sans-serif;
     letter-spacing: -.00278rem;
-    font-size: 20px;
+    font-size: 16px;
 }
+
+h1 {
+    font-size: 5.378rem;
+}
+
+h2 {
+    font-size: 3.842rem;
+}
+
+h3 {
+    font-size: 2.744rem;
+}
+
+h4 {
+    font-size: 1.96rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
 
 
 /* | General Styles ==================================================== 
@@ -76,6 +101,12 @@ body {
 }
 
 div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
     border: 0;
@@ -93,6 +124,12 @@ article {
     border: 0;
 }
 
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    border: 0;
+}
 
 /* | Styles ==================================================== 
 ===============================================================*/
@@ -105,9 +142,9 @@ article {
 
 
 
-.content {
+/* .content {
      border: 1px solid black; 
-}
+} */
 
 .content > h2 {
     margin: 1rem 0rem;
@@ -139,10 +176,3 @@ article {
     height: 18px;
     vertical-align: sub;
 }
-
-
-
-
-
-
-
