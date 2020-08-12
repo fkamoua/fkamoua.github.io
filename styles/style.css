@@ -1,13 +1,38 @@
 html {
     box-sizing: border-box;
-    background: whitesmoke;
-    color: #333;
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
 }
 
+/* | Palette ==================================================== 
+===============================================================*/
+
+/* C4F8B4 
+C2FFAE
+*/
+
+.primary-color {
+    background-color: #64A653;
+}
+.primary-light-color {
+    background-color: #95d881;
+}
+.primary-dark-color {
+    background-color: #347727;
+}
+
+.secondary-color {
+    background-color: #A65464;
+}
+
+.error-color {
+    background-color: #B00020;  
+}
+.text-color {
+    color: #000000
+}
 
 /* | Layout ==================================================== 
 ===============================================================*/
@@ -137,7 +162,6 @@ ol, ul {
 
 .nav-bar {
     text-align: center;
-    background-color: #569458;
 }
 
 
