@@ -1,0 +1,79 @@
+html {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+/* TODO FIGURE OUT ROW HEIGHTS */
+
+.body-grid-wrapper, .navbar-grid-wrapper, .footer-grid-wrapper {
+    display: grid;
+    grid-auto-rows: minmax(6.25rem, auto);
+}
+
+.body-grid-wrapper {
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    margin: 16px 24px;
+    column-gap: 24px;
+}
+
+.nav-bar-box {
+    grid-column: col-start -1 / span -1;
+}
+
+.header-box {
+    grid-column: col-start / -1;
+    grid-row: 2 / 4;
+}
+
+.item1-box {
+    grid-column: col-start 2 / span 10;
+    grid-row: 8 / 10;
+}
+
+.item2-box {
+    grid-column: col-start 3 / span 8;
+    grid-row: 11 / 13;
+}
+
+.footer-box {
+    grid-column: col-start -1 / -1;
+    grid-row: 15;
+}
+
+
+.box {
+    display: flex;
+    /* border: solid black 1px; */
+    padding: 1rem;
+    margin-bottom: 16px;
+}
+
+.nav-bar-box {
+    background-color: lightseagreen;
+    margin-bottom: 0px;
+}
+
+.header-box {
+    background-color: indianred;
+}
+
+.item1-box {
+    background-color: lightgreen;
+}
+
+.item2-box {
+    background-color: lightskyblue;
+}
+
+.footer-box {
+    background-color: lightsalmon;
+}
