@@ -36,7 +36,7 @@ body {
     "btn";
     padding: .8rem;
     height: 100vh;
-    height: -webkit-fill-available;
+ 
     row-gap: .5rem;
 }
 
