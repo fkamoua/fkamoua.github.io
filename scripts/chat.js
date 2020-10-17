@@ -1,0 +1,143 @@
+
+(function() {
+    let count = 0;
+    let userNumChatMessages = 0;
+    let userChatHistory = [];
+    let userChatHistoryCount = userChatHistory.length - 1;
+    let isStartHistory = true;
+    const MAXCHATMESSAGES = 100;
+    const textarea = document.querySelector('#chat-input__textarea');
+    const sendBtn = document.querySelector('.send-btn');
+    const chat = document.querySelector('#chat');
+    
+    
+    window.addEventListener("keydown", function(event) {
+        if(event.defaultPrevented) {
+            return;
+        }
+        if(document.activeElement === textarea) {
+            switch(event.key) {
+                case "Enter":
+                    event.preventDefault();
+                    send();
+                    break;
+                case "ArrowUp":
+                    chatHistory(-1);
+                    break;
+                case "ArrowDown":
+                    chatHistory(1);
+                    break;
+                default:
+                    return;
+            }
+        }
+        if(event.key != "ArrowDown" && event.key != "ArrowUp") {
+            userChatHistoryCount = userChatHistory.length - 1;
+        }
+        
+        event.preventDefault();
+    }, true);
+    
+    textarea.addEventListener('input', autoResize, false);
+    sendBtn.addEventListener('click', send, false);
+    
+    function autoResize() {
+        //upper size limit
+        let maxHeight;
+        if(this.scrollHeight <= 81) {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+            maxHeight = this.style.height;
+            this.style.overflow = 'hidden';
+        } else {
+            this.style.height = maxHeight;
+            this.style.overflow = 'auto';
+        }
+        // set height for 1 line
+        let height = parseInt(this.style.height);
+        if(height <= 41)  {
+            this.style.height = 'auto';
+        }
+    }
+    
+    function autoSize() {
+        this.style.height = 'auto';
+    }
+    
+
+    function chatHistory(direction) {
+        console.log(userChatHistory);
+        console.log(userChatHistoryCount);
+        if(userChatHistory.length != 0 && (direction < 0 && userChatHistoryCount >= 0) || 
+           (direction > 0 && userChatHistoryCount <= userChatHistory.length)) {
+
+            if(direction < 0 && userChatHistoryCount > 0 || direction > 0 && userChatHistoryCount < userChatHistory.length - 1) {
+                if(isStartHistory) {
+                    textarea.value = userChatHistory[userChatHistoryCount];
+                    isStartHistory = false;
+                } else {
+                    userChatHistoryCount += direction;
+                    textarea.value = userChatHistory[userChatHistoryCount];
+                }
+               
+            } else {
+                if(direction > 0) {
+                    textarea.value = '';
+                    userChatHistoryCount = userChatHistory.length;
+                }
+                else {
+                    textarea.value = userChatHistory[userChatHistoryCount];
+                }
+            }
+        }
+    }
+    
+    function send() {
+        isStartHistory = true;
+        var inputString = textarea.value;
+        if(isValidString(inputString)) {
+            var newChatLineMessage = document.createElement('div');
+            newChatLineMessage.setAttribute('class', 'chat-line__message');
+            var newChatLineUsername = document.createElement('span');
+            newChatLineUsername.setAttribute('class', 'chat-line__username');
+            newChatLineMessage.append(newChatLineUsername);
+            var newMessage = document.createElement('span');
+            newMessage.setAttribute('class', 'message');
+            newChatLineMessage.append(newMessage);
+            var chatBox = document.getElementById("chat");
+            chatBox.appendChild(newChatLineMessage);
+    
+            var chatLineUsername = document.querySelectorAll('.chat-line__username');
+            var message = document.querySelectorAll('.message');
+            
+            newChatLineUsername.innerHTML = "user" + count + ": ";
+    
+            // prevent html injection
+            inputString = inputString.replace(/</g, "&lt;").replace(/>/g,"&gt;");
+            
+            newMessage.innerHTML = inputString.replace('\n', ' ');
+            textarea.value = '';
+            count++;
+            autoSize.call(textarea);
+    
+            // add input to chat history
+            userChatHistory.push(inputString);
+    
+            // scroll down
+            chat.scrollTop = chat.scrollHeight;
+
+            // chat message limit
+            if (userNumChatMessages > MAXCHATMESSAGES) {
+                var chatLineMessage = document.querySelectorAll('.chat-line__message');
+                chatLineMessage[0].remove();
+            } else {
+                userNumChatMessages++;
+            }
+        }
+    }
+    
+    function isValidString(s) {
+        return !/^\s+$/.test(s) && s;
+    }
+    
+})();
