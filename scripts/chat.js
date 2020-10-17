@@ -9,8 +9,11 @@
     const textarea = document.querySelector('#chat-input__textarea');
     const sendBtn = document.querySelector('.send-btn');
     const chat = document.querySelector('#chat');
+    const chatBox = document.querySelector('.chat-box');
     
-    
+    chatBox.style.height = window.innerHeight + 'px';
+    console.log(window.innerHeight);
+
     window.addEventListener("keydown", function(event) {
         if(event.defaultPrevented) {
             return;
