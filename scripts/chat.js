@@ -11,9 +11,10 @@
     const chat = document.querySelector('#chat');
     const chatBox = document.querySelector('.chat-box');
     
+    // set chatbox height
     chatBox.style.height = window.innerHeight + 'px';
-    console.log(window.innerHeight);
-
+    window.addEventListener('resize', setChatHeight, false);
+   
     window.addEventListener("keydown", function(event) {
         if(event.defaultPrevented) {
             return;
@@ -44,23 +45,30 @@
     textarea.addEventListener('input', autoResize, false);
     sendBtn.addEventListener('click', send, false);
     
+    function setChatHeight() {
+        chatBox.style.height = window.innerHeight + 'px';
+    }
+
     function autoResize() {
-        //upper size limit
-        let maxHeight;
-        if(this.scrollHeight <= 81) {
-            this.style.height = 'auto';
-            this.style.height = this.scrollHeight + 'px';
-            maxHeight = this.style.height;
-            this.style.overflow = 'hidden';
-        } else {
-            this.style.height = maxHeight;
-            this.style.overflow = 'auto';
-        }
         // set height for 1 line
-        let height = parseInt(this.style.height);
-        if(height <= 41)  {
+        let height = parseInt(this.scrollHeight);
+        if(height <= 72)  {
             this.style.height = 'auto';
+        } else {
+            //upper size limit
+            let maxHeight;
+            if(this.scrollHeight <= 165) {
+                this.style.height = 'auto';
+                this.style.height = this.scrollHeight + 'px';
+                maxHeight = this.style.height;
+                this.style.overflow = 'hidden';
+            } else {
+                this.style.height = maxHeight;
+                this.style.overflow = 'auto';
+            }
         }
+
+       
     }
     
     function autoSize() {
@@ -69,8 +77,6 @@
     
 
     function chatHistory(direction) {
-        console.log(userChatHistory);
-        console.log(userChatHistoryCount);
         if(userChatHistory.length != 0 && (direction < 0 && userChatHistoryCount >= 0) || 
            (direction > 0 && userChatHistoryCount <= userChatHistory.length)) {
 
