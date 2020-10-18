@@ -79,7 +79,7 @@ body {
     resize: none;
     padding: .45rem .5rem;
     outline: none;
-    border-style: none;
+    border-style: solid;
     box-shadow: none;
     width: 100%;
     border: var(--textarea-bg-color) solid 1px;
