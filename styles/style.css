@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 :root {
-    --main-bg-color: black;
+    --main-bg-color: #FFFFFF;
     --secondary-bg-color: #af4b4b;
     --textarea-bg-color: #e9e9e9;
     --textarea-border-hover: #cacaca;
@@ -83,7 +83,7 @@ body {
     box-shadow: none;
     width: 100%;
     border: var(--textarea-bg-color) solid 1px;
-    
+    border-radius: 40px;
     background-color: var(--textarea-bg-color);
     transition: background-color 0.15s ease-out, 
                 border-color 0.15s ease-out;
