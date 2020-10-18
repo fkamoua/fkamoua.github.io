@@ -48,7 +48,8 @@
     sendBtn.addEventListener('click', send, false);
     
     function stickToKeyboard() {
-        chatInput.style.bottom += window.height - window.pageYOffset; 
+        chatInput.style.bottom += window.height - window.pageYOffset;
+        alert(chatInput.style.bottom); 
     }
 
 
