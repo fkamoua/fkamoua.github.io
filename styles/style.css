@@ -71,6 +71,7 @@ body {
     position: -webkit-sticky;
     position: sticky;
     bottom: 270px;
+    
 }
 
 #chat-input__textarea {
