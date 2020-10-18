@@ -81,7 +81,7 @@ body {
     outline: none;
     box-shadow: none;
     width: 100%;
-    border: red solid 2px;
+    border: var(--textarea-bg-color) solid 1px;
     border-radius: 10px;
     background-color: var(--textarea-bg-color);
     transition: background-color 0.15s ease-out, 
@@ -92,7 +92,7 @@ body {
 
 #chat-input__textarea:focus {
     background-color: var(--main-bg-color);
-    
+    border-color: var(--highlight-color)
 }
 
 .btns {
