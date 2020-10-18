@@ -80,7 +80,7 @@ body {
     padding: .45rem .5rem;
     outline: none;
     box-shadow: none;
-    border: var(--textarea-bg-color) solid 1px;
+    border: var(--main-bg-color) solid 1px;
     border-radius: 10px;
     width: 100%;
     background-color: var(--textarea-bg-color);
@@ -88,9 +88,7 @@ body {
                 border-color 0.15s ease-out;
 }
 
-#chat-input__textarea:hover {
-    border-color: var(--textarea-border-hover);
-}
+
 
 #chat-input__textarea:focus {
     background-color: var(--main-bg-color);
@@ -103,6 +101,10 @@ body {
 
 
 @media (min-width: 992px) {
+    #chat-input__textarea:hover {
+        border-color: var(--textarea-border-hover);
+    }
+
     .btns {
         grid-area: btn;
         display: flex;
