@@ -44,13 +44,8 @@
     }, true);
     
     textarea.addEventListener('input', autoResize, false);
-    textarea.addEventListener('focus', stickToKeyboard, false);
     sendBtn.addEventListener('click', send, false);
     
-    function stickToKeyboard() {
-        chatInput.style.bottom += window.height - window.pageYOffset; 
-    }
-
 
     function setChatHeight() {
         chatBox.style.height = window.innerHeight + 'px';
