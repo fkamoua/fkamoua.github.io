@@ -5,7 +5,7 @@
     let userChatHistory = [];
     let userChatHistoryCount = userChatHistory.length - 1;
     let isStartHistory = true;
-    const MAXCHATMESSAGES = 1000;
+    const MAXCHATMESSAGES = 100;
     const textarea = document.querySelector('#chat-input__textarea');
     const sendBtn = document.querySelector('.send-btn');
     const chat = document.querySelector('#chat');
