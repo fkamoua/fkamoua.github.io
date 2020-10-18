@@ -80,7 +80,7 @@ body {
     padding: .45rem .5rem;
     outline: none;
     box-shadow: none;
-    border: var(--main-bg-color) solid 1px;
+    border: var(--textarea-bg-color) solid 1px;
     border-radius: 10px;
     width: 100%;
     background-color: var(--textarea-bg-color);
@@ -92,7 +92,7 @@ body {
 
 #chat-input__textarea:focus {
     background-color: var(--main-bg-color);
-    border: var(--highlight-color) solid 1px;
+    border: var(#125f34) solid 1px;
 }
 
 .btns {
