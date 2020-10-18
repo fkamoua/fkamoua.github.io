@@ -35,7 +35,7 @@ body {
     "out"
     "in"
     "btn";
-    padding: 1rem;
+    padding: 1rem .5rem 0;
     row-gap: .5rem;
 }
 
@@ -77,10 +77,10 @@ body {
     color: var(--text-color);
     line-height: 1.5em;
     resize: none;
-    padding: .65rem;
+    padding: .45rem .5rem;
     outline: none;
     border: var(--main-bg-color) solid 3px;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 100%;
     background-color: var(--textarea-bg-color);
     transition: background-color 0.15s ease-out, 
