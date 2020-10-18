@@ -80,7 +80,7 @@ body {
     padding: .45rem .5rem;
     outline: none;
     box-shadow: none;
-    border: var(--main-bg-color) solid 0px;
+    border: var(--main-bg-color) solid 1px;
     border-radius: 10px;
     width: 100%;
     background-color: var(--textarea-bg-color);
