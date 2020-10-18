@@ -35,7 +35,7 @@ body {
     "out"
     "in"
     "btn";
-    padding: 2rem;
+    padding: 1rem;
     row-gap: .5rem;
 }
 
@@ -43,11 +43,11 @@ body {
     grid-area: out;
     color: var(--text-color);
     overflow-y: auto;
+    padding: 0 0.625rem;
 }
 
 
 .chat-line__message {
-    padding: 0 2rem;
     line-height: 1.5rem;
     margin-bottom: .3rem;
 }
@@ -73,15 +73,14 @@ body {
 #chat-input__textarea {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1rem;
     color: var(--text-color);
     line-height: 1.5em;
     resize: none;
-    padding: .65rem 2rem;
-    margin: 3rem 0 0;
+    padding: .65rem;
     outline: none;
-    border: var(--main-bg-color) solid 5px;
-    border-radius: 10px;
+    border: var(--main-bg-color) solid 3px;
+    border-radius: 20px;
     width: 100%;
     background-color: var(--textarea-bg-color);
     transition: background-color 0.15s ease-out, 
@@ -94,54 +93,54 @@ body {
 
 #chat-input__textarea:focus {
     background-color: var(--main-bg-color);
-    border: var(--highlight-color) solid 5px;
+    border: var(--highlight-color) solid 3px;
 }
-
 
 .btns {
-    grid-area: btn;
-    display: flex;
-    justify-content: space-between;
-    margin: .5rem 0.3846rem 0;
+    display: none;
 }
 
 
-.send-btn, .emoji-btn {
-    border-radius: 5px;
-}
-
-.send-btn {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: .0625em;
-    background-color: var(--highlight-color);
-    border: none;
-    width: 8rem;
-    height: 3rem;
-    transition: background-color 0.15s ease-out; 
-}
-
-.send-btn:focus {
-    outline: none;
-}
-
-.send-btn:active {
-    background-color: var(--dark-highlight-color);
-}
-
-.send-btn:hover {
-    background-color: var(--light-highlight-color);
-}
-
-.emoji-btn {
-    background-color: var(--main-bg-color);
-    border: none;
-    margin: 0 .65rem;
-}
-
-@media screen and (min-width: 1500px) {
-    .chat-box {
-        padding: 1rem;
+@media (min-width: 992px) {
+    .btns {
+        grid-area: btn;
+        display: flex;
+        justify-content: space-between;
+        margin: .5rem 0.3846rem 0;
+    }
+    
+    
+    .send-btn, .emoji-btn {
+        border-radius: 5px;
+    }
+    
+    .send-btn {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: .0625em;
+        background-color: var(--highlight-color);
+        border: none;
+        width: 8rem;
+        height: 3rem;
+        transition: background-color 0.15s ease-out; 
+    }
+    
+    .send-btn:focus {
+        outline: none;
+    }
+    
+    .send-btn:active {
+        background-color: var(--dark-highlight-color);
+    }
+    
+    .send-btn:hover {
+        background-color: var(--light-highlight-color);
+    }
+    
+    .emoji-btn {
+        background-color: var(--main-bg-color);
+        border: none;
+        margin: 0 .65rem;
     }
 }
