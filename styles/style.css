@@ -92,7 +92,7 @@ body {
 
 #chat-input__textarea:focus {
     background-color: var(--main-bg-color);
-    border: var(#125f34) solid 1px;
+    border-color: purple;
 }
 
 .btns {
