@@ -37,6 +37,7 @@ body {
     "btn";
     padding: 1rem .5rem 0;
     row-gap: .5rem;
+    overflow: hidden;
 }
 
 #chat {
