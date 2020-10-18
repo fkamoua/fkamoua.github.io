@@ -83,7 +83,7 @@ body {
     box-shadow: none;
     width: 100%;
     border: var(--textarea-bg-color) solid 1px;
-    border-radius: 40px;
+    border-radius: 0;
     background-color: var(--textarea-bg-color);
     transition: background-color 0.15s ease-out, 
                 border-color 0.15s ease-out;
