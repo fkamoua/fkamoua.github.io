@@ -57,7 +57,7 @@
             e.preventDefault();
             e.stopPropagation();
         }
-        chatBox.addEventListener('touchmove', listener, {passive:false});
+        window.addEventListener('touchmove', listener, {passive:false});
         body.style.backgroundColor = 'blue';
     }
 
