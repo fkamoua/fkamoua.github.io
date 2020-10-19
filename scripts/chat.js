@@ -54,11 +54,12 @@
     function focusKeyboard() {
         if(isMobile) {
             document.addEventListener('scroll', stickToKeyboard) 
+            console.log(document.body.scrollHeight);
         }
     }
 
     function stickToKeyboard() {
-        document.querySelector('.test').innerHTML = window.pageYOffset;
+        document.querySelector('.test').innerHTML = document.body.scrollHeight;
         chatInput.style.bottom = (document.body.scrollHeight - window.pageYOffset) + 'px';
         document.body.style.backgroundColor = 'blue';
     }

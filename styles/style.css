@@ -73,6 +73,12 @@ body {
     bottom: 0;
 }
 
+.test {
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+
 #chat-input__textarea {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
