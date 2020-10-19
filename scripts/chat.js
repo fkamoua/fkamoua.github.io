@@ -54,10 +54,11 @@
 
     function disableScroll() {
         var listener = function(e) {
-         
-        }
+            if(e.target.tagName == "BODY"){
+                e.preventDefault();
+              }
         document.addEventListener('touchmove', listener, {passive:false});
-        body.style.backgroundColor = 'green';
+        body.style.backgroundColor = 'blue';
     }
 
  
