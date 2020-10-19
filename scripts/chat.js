@@ -54,12 +54,12 @@
         if(window.isMobile) {
             textarea.addEventListener('scroll', stickToKeyboard) 
         }
-       
+        stickToKeyboard();
     }
 
     function stickToKeyboard() {
         chatInput.style.bottom = (window.innerHeight - window.pageYOffset + 270) + 'px';
-        alert(window.pageYOffset);
+        document.body.style.backgroundColor = 'black';
     }
 
     function setChatHeight() {
