@@ -6,6 +6,8 @@
     let userChatHistoryCount = userChatHistory.length - 1;
     let isStartHistory = true;
     const MAXCHATMESSAGES = 100;
+
+    const body = document.querySelector('body');
     const textarea = document.querySelector('#chat-input__textarea');
     const sendBtn = document.querySelector('.send-btn');
     const chat = document.querySelector('#chat');
@@ -47,7 +49,16 @@
     }, true);
     
     textarea.addEventListener('input', autoResize, false);
+    textarea.addEventListener('focus', disableScroll, false);
     sendBtn.addEventListener('click', send, false);
+
+    function disableScroll() {
+        let scrollPosition = window.pageYOffset;
+        body.style.overflow = 'hidden';
+        body.style.positon = 'fixed';
+        body.style.top = '-${scrollPosition}px';
+        body.style.width = '100%';
+    }
 
     function setChatHeight() {
         chatBox.style.height = window.innerHeight + 'px';
