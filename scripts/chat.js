@@ -57,8 +57,9 @@
             if(e.target.tagName == "BODY"){
                 e.preventDefault();
               }
+        }
         document.addEventListener('touchmove', listener, {passive:false});
-        body.style.backgroundColor = 'blue';
+        body.style.backgroundColor = 'green';
     }
 
  
