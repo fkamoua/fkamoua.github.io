@@ -53,12 +53,10 @@
     sendBtn.addEventListener('click', send, false);
 
     function disableScroll() {
-        let scrollPosition = window.pageYOffset;
-        body.style.overflow = 'hidden';
-        body.style.positon = 'fixed';
-        body.style.top = 'scrollPosition' + 'px';
-        body.style.width = '100%';
-        body.style.backgroundColor = 'green';
+        body.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, false);
+        body.style.backgroundColor = 'orange';
     }
 
     function setChatHeight() {
