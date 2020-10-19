@@ -53,10 +53,12 @@
     sendBtn.addEventListener('click', send, false);
 
     function disableScroll() {
-        body.addEventListener('touchmove', function(e) {
+        var listner = function(e) {
             e.preventDefault();
-        }, false);
-        body.style.backgroundColor = 'orange';
+        }
+
+        document.addEventListener('touchmove', listner, {passive:false});
+        body.style.backgroundColor = 'green';
     }
 
     function setChatHeight() {
