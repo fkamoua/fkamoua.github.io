@@ -47,7 +47,7 @@
     }, true);
     
     textarea.addEventListener('input', autoResize, false);
-    //textarea.addEventListener('focus', focusKeyboard, false);
+    textarea.addEventListener('focus', focusKeyboard, false);
     sendBtn.addEventListener('click', send, false);
     
 
