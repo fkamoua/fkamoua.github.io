@@ -56,8 +56,9 @@
         let scrollPosition = window.pageYOffset;
         body.style.overflow = 'hidden';
         body.style.positon = 'fixed';
-        body.style.top = '-${scrollPosition}px';
+        body.style.top = 'scrollPosition' + 'px';
         body.style.width = '100%';
+        body.style.backgroundColor = 'green';
     }
 
     function setChatHeight() {
