@@ -12,8 +12,8 @@
     const chatBox = document.querySelector('.chat-box');
     const chatInput = document.querySelector('.chat-input');
 
-    window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
-
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+  
     // set chatbox height
     chatBox.style.height = window.innerHeight + 'px';
     window.addEventListener('resize', setChatHeight, false);
@@ -51,10 +51,9 @@
     
 
     function focusKeyboard() {
-        if(window.isMobile) {
+        if(isMobile) {
             textarea.addEventListener('scroll', stickToKeyboard) 
         }
-        stickToKeyboard();
     }
 
     function stickToKeyboard() {
