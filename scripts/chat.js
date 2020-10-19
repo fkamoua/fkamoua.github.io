@@ -53,16 +53,12 @@
 
     function focusKeyboard() {
         if(isMobile) {
-            document.addEventListener('scroll', stickToKeyboard) 
-            console.log(document.body.scrollHeight);
+            document.body.style.overflow = 'hidden';
+            document.body.style.backgroundColor = 'green'
         }
     }
 
-    function stickToKeyboard() {
-        document.querySelector(".test").innerHTML = (document.body.scrollHeight - window.pageYOffset) + " " + window.pageYOffset;
-        chatInput.style.top =  document.body.scrollHeight - (document.body.scrollHeight - window.pageYOffset) + 'px';
-        document.body.style.backgroundColor = 'blue';
-    }
+   
 
     function setChatHeight() {
         chatBox.style.height = window.innerHeight + 'px';
