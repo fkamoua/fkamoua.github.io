@@ -53,8 +53,9 @@
 
     function focusKeyboard() {
         if(isMobile) {
+            document.body.style.position ='fixed';
             document.body.style.overflow = 'hidden';
-            document.body.style.backgroundColor = 'green'
+            document.body.style.backgroundColor = 'orange'
         }
     }
 
