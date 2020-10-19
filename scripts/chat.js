@@ -47,20 +47,7 @@
     }, true);
     
     textarea.addEventListener('input', autoResize, false);
-    textarea.addEventListener('focus', focusKeyboard, false);
     sendBtn.addEventListener('click', send, false);
-    
-
-    function focusKeyboard() {
-        if(isMobile) {
-            document.body.style.position ='fixed';
-            document.body.style.overflow = 'hidden';
-            document.body.style.scrollTop = 0;
-            document.body.style.backgroundColor = 'green'
-        }
-    }
-
-   
 
     function setChatHeight() {
         chatBox.style.height = window.innerHeight + 'px';
