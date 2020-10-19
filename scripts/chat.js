@@ -53,13 +53,15 @@
     sendBtn.addEventListener('click', send, false);
 
     function disableScroll() {
-        var listner = function(e) {
+        var listener = function(e) {
             e.preventDefault();
+            e.stopPropagation();
         }
-
-        document.addEventListener('touchmove', listner, {passive:false});
+        document.addEventListener('touchmove', listener, {passive:false});
         body.style.backgroundColor = 'green';
     }
+
+ 
 
     function setChatHeight() {
         chatBox.style.height = window.innerHeight + 'px';
