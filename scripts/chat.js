@@ -12,6 +12,8 @@
     const chatBox = document.querySelector('.chat-box');
     const chatInput = document.querySelector('.chat-input');
 
+    window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
+
     // set chatbox height
     chatBox.style.height = window.innerHeight + 'px';
     window.addEventListener('resize', setChatHeight, false);
@@ -44,12 +46,19 @@
     }, true);
     
     textarea.addEventListener('input', autoResize, false);
-    textarea.addEventListener('focus', stickToKeyboard, false);
+    textarea.addEventListener('focus', focusKeyboard, false);
     sendBtn.addEventListener('click', send, false);
     
 
+    function focusKeyboard() {
+        if(window.isMobile) {
+            textarea.addEventListener('scroll', stickToKeyboard) 
+        }
+       
+    }
+
     function stickToKeyboard() {
-        chatInput.style.bottom += (window.innerHeight - window.pageYOffset + 270) + 'px'; 
+        chatInput.style.bottom = (window.innerHeight - window.pageYOffset + 270) + 'px';
     }
 
     function setChatHeight() {
