@@ -68,7 +68,7 @@ body {
 .chat-input {
     grid-area: in;
     display: flex;    
-    position: relative;
+    position: fixed;
     bottom: 0;
 }
 
