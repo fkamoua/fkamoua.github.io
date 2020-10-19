@@ -68,17 +68,9 @@ body {
 .chat-input {
     grid-area: in;
     display: flex;    
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     bottom: 0;
 }
-
-.test {
-    position: -webkit-sticky;
-    position: sticky;
-
-}
-
 
 #chat-input__textarea {
     font-family: 'Roboto', sans-serif;

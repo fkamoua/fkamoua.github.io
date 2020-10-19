@@ -59,9 +59,8 @@
     }
 
     function stickToKeyboard() {
-        document.querySelector('.test').innerHTML = document.body.scrollHeight;
         chatInput.style.bottom = (document.body.scrollHeight - window.pageYOffset) + 'px';
-        document.body.style.backgroundColor = 'blue';
+        document.body.style.backgroundColor = 'orange';
     }
 
     function setChatHeight() {
