@@ -59,6 +59,7 @@
 
     function stickToKeyboard() {
         chatInput.style.bottom = (window.innerHeight - window.pageYOffset + 270) + 'px';
+        alert(window.pageYOffset);
     }
 
     function setChatHeight() {
