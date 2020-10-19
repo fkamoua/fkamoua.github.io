@@ -14,6 +14,7 @@
 
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
   
+
     // set chatbox height
     chatBox.style.height = window.innerHeight + 'px';
     window.addEventListener('resize', setChatHeight, false);
@@ -51,8 +52,9 @@
     
 
     function focusKeyboard() {
+        console.log(isMobile);
         if(isMobile) {
-            textarea.addEventListener('scroll', stickToKeyboard) 
+            document.addEventListener('scroll', stickToKeyboard) 
         }
     }
 
