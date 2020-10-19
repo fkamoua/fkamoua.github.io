@@ -59,7 +59,7 @@
     }
 
     function stickToKeyboard() {
-        chatInput.style.bottom = (window.pageYOffset + 270) + 'px';
+        chatInput.style.bottom = (window.height - window.pageYOffset + 270) + 'px';
         document.body.style.backgroundColor = 'black';
     }
 
