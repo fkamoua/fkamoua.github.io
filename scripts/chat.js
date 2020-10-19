@@ -55,7 +55,8 @@
         if(isMobile) {
             document.body.style.position ='fixed';
             document.body.style.overflow = 'hidden';
-            document.body.style.backgroundColor = 'orange'
+            document.body.style.scrollTop = 0;
+            document.body.style.backgroundColor = 'green'
         }
     }
 
