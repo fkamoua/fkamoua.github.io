@@ -49,9 +49,21 @@
     }, true);
     
     textarea.addEventListener('input', autoResize, false);
+    textarea.addEventListener('focus', disableScroll, false);
     sendBtn.addEventListener('click', send, false);
 
-  
+    function disableScroll() {
+        var listener = function(e) {
+            e.preventDefault();
+        }
+        document.addEventListener('touchmove', listener, {passive:false});
+        window.scrollTop(0,0);
+        body.scrollTop = 0;
+        body.style.backgroundColor = 'green';
+    }
+
+ 
+
     function setChatHeight() {
         chatBox.style.height = window.innerHeight + 'px';
     }
