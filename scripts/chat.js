@@ -52,9 +52,12 @@
     sendBtn.addEventListener('click', send, false);
 
     textarea.addEventListener('focus', function() {
-        let chatLineMessage = document.querySelectorAll(".chat-line__Message");
-        chatLineMessage[-1].scrollIntoView();
-        body.style.backgroundColor = 'green';
+        let chatLineMessage = document.querySelectorAll(".chat-line__message");
+        if(chatLineMessage.length) {
+            chatLineMessage[chatLineMessage.length - 1].scrollIntoView();
+            body.style.backgroundColor = 'green';
+        }
+        
     }, false);
   
 
