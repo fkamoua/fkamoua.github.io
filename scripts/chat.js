@@ -52,14 +52,14 @@
     sendBtn.addEventListener('click', send, false);
 
    
-    body.addEventListener('ontouchmove', function(e) {
+    body.addEventListener('touchmove', function(e) {
         e.preventDefault();
     }, {passive:false});
 
     textarea.addEventListener('focus', function() {
         window.scrollTo(0,0);
         body.style.scrollTop = 0;
-        body.style.backgroundColor = 'orange';
+        body.style.backgroundColor = 'blue';
     }, false);
  
 
