@@ -51,7 +51,11 @@
     textarea.addEventListener('input', autoResize, false);
     sendBtn.addEventListener('click', send, false);
 
-
+    textarea.addEventListener('focus', function() {
+        let chatLineMessage = document.querySelectorAll(".chat-line__Message");
+        chatLineMessage[-1].scrollIntoView();
+        body.style.backgroundColor = 'green';
+    }, false);
   
 
     function setChatHeight() {
