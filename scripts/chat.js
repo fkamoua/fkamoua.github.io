@@ -18,7 +18,9 @@
   
 
     // set chatbox height
-    chatBox.style.height = window.innerHeight + 'px';
+    chatBoxStyle = getComputedStyle(chatBox);
+    
+    chatBox.style.height = window.innerHeight - 2 * parseInt(chatBoxStyle.marginTop) + 'px';
     window.addEventListener('resize', setChatHeight, false);
    
     window.addEventListener("keydown", function(event) {
@@ -55,13 +57,13 @@
   
 
     function setChatHeight() {
-        chatBox.style.height = window.innerHeight + 'px';
+        chatBox.style.height = window.innerHeight - 2 * parseInt(chatBoxStyle.marginTop) + 'px';
     }
 
     function autoResize() {
         // set height for 1 line
         let height = parseInt(this.scrollHeight);
-        if(height <= 72)  {
+        if(height <= 61)  {
             this.style.height = 'auto';
         } else {
             //upper size limit
