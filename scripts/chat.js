@@ -54,12 +54,12 @@
    
     document.addEventListener('ontouchmove', function(e) {
         e.preventDefault();
-    }, false);
+    }, {passive:false});
 
     textarea.addEventListener('focus', function(e) {
         window.scrollTo(0,0);
         body.style.scrollTop = 0;
-        body.style.backgroundColor = 'blue';
+        body.style.backgroundColor = 'green';
     }, false);
  
 
