@@ -52,12 +52,7 @@
     sendBtn.addEventListener('click', send, false);
 
 
-    textarea.addEventListener('focus', function() {
-        window.scrollTo(0,0);
-        body.style.scrollTop = 0;
-        body.style.backgroundColor = 'green';
-    }, false);
- 
+  
 
     function setChatHeight() {
         chatBox.style.height = window.innerHeight + 'px';
