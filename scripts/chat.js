@@ -55,8 +55,9 @@
     function disableScroll() {
         var listener = function(e) {
             e.preventDefault();
+            e.stopPropagation();
         }
-        document.addEventListener('touchmove', listener, {passive:false, once:false});
+        document.addEventListener('touchmove', listener, {passive:false, capture:true});
         body.style.backgroundColor = 'orange';
     }
 
