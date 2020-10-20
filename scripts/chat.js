@@ -57,7 +57,7 @@
             e.preventDefault();
         }
         document.addEventListener('touchmove', listener, {passive:false});
-        window.scrollTop(0,0);
+        window.scrollTo(0,0);
         body.scrollTop = 0;
         body.style.backgroundColor = 'green';
     }
