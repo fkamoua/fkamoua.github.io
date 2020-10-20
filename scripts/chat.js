@@ -49,19 +49,18 @@
     }, true);
     
     textarea.addEventListener('input', autoResize, false);
-    textarea.addEventListener('focus', disableScroll, false);
     sendBtn.addEventListener('click', send, false);
 
-    function disableScroll() {
-        var listener = function(e) {
-            e.preventDefault();
-        }
-        document.addEventListener('touchmove', listener, {passive:false});
-        window.scrollTo(0,0);
-        body.scrollTop = 0;
-        body.style.backgroundColor = 'green';
-    }
+   
+    document.addEventListener('ontouchmove', function(e) {
+        e.preventDefault();
+    }, false);
 
+    textarea.addEventListener('focus', function(e) {
+        window.scrollTo(0,0);
+        body.style.scrollTop = 0;
+        body.style.backgroundColor = 'blue';
+    }, false);
  
 
     function setChatHeight() {
