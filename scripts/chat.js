@@ -55,7 +55,7 @@
     textarea.addEventListener('focus', function() {
         window.scrollTo(0,0);
         body.style.scrollTop = 0;
-        body.style.backgroundColor = 'green';
+        body.style.backgroundColor = 'brown';
     }, false);
  
 
