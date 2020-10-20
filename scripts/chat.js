@@ -56,8 +56,8 @@
         var listener = function(e) {
             e.preventDefault();
         }
-        body.addEventListener('touchmove', listener, {passive:false});
-        body.style.backgroundColor = 'green';
+        document.addEventListener('touchmove', listener, {passive:false});
+        body.style.backgroundColor = 'orange';
     }
 
  
