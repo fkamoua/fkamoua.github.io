@@ -56,10 +56,10 @@
         e.preventDefault();
     }, {passive:false});
 
-    textarea.addEventListener('focus', function(e) {
+    textarea.addEventListener('focus', function() {
         window.scrollTo(0,0);
         body.style.scrollTop = 0;
-        body.style.backgroundColor = 'green';
+        body.style.backgroundColor = 'blue';
     }, false);
  
 
