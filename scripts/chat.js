@@ -57,8 +57,8 @@
             e.preventDefault();
             e.stopPropagation();
         }
-        document.addEventListener('touchmove', listener, {passive:false, capture:true});
-        body.style.backgroundColor = 'orange';
+        document.addEventListener('touchmove', listener, {passive:true});
+        body.style.backgroundColor = 'green';
     }
 
  
