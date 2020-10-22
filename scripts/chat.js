@@ -19,9 +19,10 @@
 
     // set chatbox height
     chatBoxStyle = getComputedStyle(chatBox);
+        chatBox.style.height = window.innerHeight + 'px';
+        window.addEventListener('resize', setChatHeight, false)
     
-    chatBox.style.height = window.innerHeight - 2 * parseInt(chatBoxStyle.marginTop) + 'px';
-    window.addEventListener('resize', setChatHeight, false);
+
    
     window.addEventListener("keydown", function(event) {
         if(event.defaultPrevented) {
@@ -57,7 +58,7 @@
   
 
     function setChatHeight() {
-        chatBox.style.height = window.innerHeight - 2 * parseInt(chatBoxStyle.marginTop) + 'px';
+        chatBox.style.height = window.innerHeight + 'px';
     }
 
     function autoResize() {
@@ -135,6 +136,9 @@
             // prevent html injection
             inputString = inputString.replace(/</g, "&lt;").replace(/>/g,"&gt;");
             
+            if(inputString.indexOf(" ") > 15 || inputString.indexOf(" ") == -1 && inputString.length > 15) {
+                newChatLineUsername.innerHTML += '<br>';
+            }
             newMessage.innerHTML = inputString.replace('\n', ' ');
             textarea.value = '';
             count++;
