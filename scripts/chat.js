@@ -64,6 +64,7 @@
     function autoResize() {
         // set height for 1 line
         let height = parseInt(this.scrollHeight);
+        console.log(height);
         if(height <= 61)  {
             this.style.height = 'auto';
         } else {
