@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li,
+ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+.page {
+    font-family: 'Sniglet', cursive;
+    margin: 1rem .5rem;
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.nav .nav__menu {
+    position: absolute;
+    right: 0;
+    font-size: 2rem;
+}
+
+.nav__links {
+    display: none;
+}
