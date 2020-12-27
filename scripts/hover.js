@@ -8,9 +8,9 @@ const removeOpacity = (e) => {
 };
 
 
-
 for (const v of links) {
     v.addEventListener('transitionend', (e) => {
+        console.log('end');
         if(e.target.addEventListener('mouseout', removeOpacity(e))) {
             e.target.removeEventListener('mouseout', removeOpacity(e));
         }
