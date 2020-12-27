@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sniglet&display=swap');
 
 :root {
     --heading-text-color: #0D0D0F;
@@ -19,14 +19,17 @@
 a {
     text-decoration: none;
     color: var(--heading-text-color);
-    transition: opacity .25s ease-in-out;
-    -moz-transition: opacity .25s ease-in-out;
+    transition: opacity 2s;
+    -moz-transition: opacity 2s;
     -webkit-transition: opacity 2s;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* transition-timing-function: cubic-bezier(.61,.09,1,1); */
 }
 
 a:hover {
     cursor: pointer;
+}
+
+.a--opacity {
     opacity: .4;
 }
 
@@ -38,6 +41,7 @@ ul {
 
 .page {
     font-family: 'Sniglet', cursive;
+    /* font-family: 'Raleway', sans-serif; */
     margin: 1rem .5rem;
     background-color: var(--main-background-color);
 }
