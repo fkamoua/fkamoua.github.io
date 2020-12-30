@@ -31,6 +31,9 @@ a:hover {
 
 .page {
     background-color: var(--main-background-color);
+}
+
+.content {
     margin: .5rem 1rem;
 }
 
@@ -38,6 +41,7 @@ a:hover {
     display: flex;
     position: relative;
     align-items: center;
+    margin-left: 1rem;
 }
 
 .nav__links:hover,
@@ -47,17 +51,38 @@ a:hover {
 }
 
 .nav__list {
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    width: 320px;
+    height: 100vh;
+    background: var(--main-background-color);
+    overflow: hidden;
     font-family: 'Courier Prime', monospace;
+    color: var(--heading-text-color);
 }
 
-.nav__menu-link {
+.nav__links--mobile {
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+
+.nav__menu-btn {
     position: absolute;
     right: 0;
+    height: 72px;
+    width: 72px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.nav__menu-link .nav__menu {
-    font-size: 2rem;
+.nav .nav__menu {
+    font-size: 1.5rem;
 }
 
 .nav__logo {
@@ -83,6 +108,23 @@ a:hover {
     font-weight: normal;
 }
 
+.dim {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--heading-text-color);
+    opacity: .4;
+}
+
+/* iphone 5 */
+@media (max-width: 374px) {
+    .nav__list {
+        width: 85vw;
+    }
+}
+
 @media (min-width: 700px) {
     .page { 
         margin: .5rem auto 0;
@@ -99,16 +141,26 @@ a:hover {
     }
 
     .nav__list {
+        visibility: visible;
         display: flex;
         position: absolute;
         right: 0;
+        left: initial;
+        top: initial;
+        width: initial;
+        height: initial;
     }
 
     .nav__links {
+        visibility: visible;
         margin-left: 1rem;
     }
 
-    .nav__menu-link {
+    .nav__menu-btn {
         display: none;
+    }
+
+    .dim {
+        visibility: hidden;
     }
 }
