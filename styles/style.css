@@ -41,7 +41,7 @@ a:hover {
     display: flex;
     position: relative;
     align-items: center;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
 }
 
 .nav__links:hover,
@@ -126,7 +126,7 @@ a:hover {
     }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
     .page { 
         margin: 1rem auto 0;
         max-width: 800px;
