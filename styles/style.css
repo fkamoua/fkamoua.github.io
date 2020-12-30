@@ -31,6 +31,7 @@ a:hover {
 
 .page {
     background-color: var(--main-background-color);
+    margin-top: .5rem;
 }
 
 .content {
