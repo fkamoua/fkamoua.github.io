@@ -31,10 +31,11 @@ a:hover {
 
 .page {
     background-color: var(--main-background-color);
+    overflow-x: hidden;
 }
 
 .content {
-    margin: .5rem 1rem;
+    margin: .5rem 1.5rem;
 }
 
 .nav {
@@ -51,7 +52,6 @@ a:hover {
 }
 
 .nav__list {
-    visibility: hidden;
     position: absolute;
     z-index: 1000;
     top: 0;
@@ -59,13 +59,19 @@ a:hover {
     padding: 2rem;
     width: 320px;
     height: 100vh;
+    overflow-y: auo;
     background: var(--main-background-color);
-    overflow: hidden;
     font-family: 'Courier Prime', monospace;
     color: var(--heading-text-color);
+    transform: translateX(100%);
+    transition: transform ease-out .3s;
 }
 
-.nav__links--mobile {
+.nav__list--is-open {
+    transform: translateX(0);
+}
+
+.nav__list--mobile {
     font-size: 1.5rem;
     line-height: 3rem;
 }
@@ -119,6 +125,15 @@ a:hover {
     opacity: .4;
 }
 
+.stop-scrolling {
+   overflow: hidden;
+}
+
+.blur {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+
 /* iphone 5 */
 @media (max-width: 374px) {
     .nav__list {
@@ -151,6 +166,8 @@ a:hover {
         width: initial;
         height: initial;
         padding: 0;
+        overflow: hidden;
+        transform: translate(0);
     }
 
     .nav__links {
